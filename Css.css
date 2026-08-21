@@ -1,0 +1,786 @@
+/* =========================================================
+   PÔLE MS — CSS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8f9;
+    color: #17232d;
+    line-height: 1.6;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    background: #17232d;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0b939b;
+}
+
+
+.slogan {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+
+.baseline {
+    color: #f39a21;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   STRUCTURE
+   ========================================================= */
+
+main {
+    width: 100%;
+}
+
+
+section {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 55px 0;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+}
+
+
+.presentation {
+    text-align: center;
+}
+
+
+.presentation p {
+    max-width: 800px;
+    margin: 20px auto 0;
+    color: #65717b;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    text-align: center;
+    background: white;
+    margin-top: 25px;
+    border-radius: 25px;
+    padding: 55px 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.hero h1 {
+    color: #0b939b;
+    font-size: 34px;
+}
+
+
+.hero p {
+    max-width: 700px;
+    margin: 20px auto 30px;
+    color: #65717b;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.primary-btn {
+    border: none;
+    background: #0b939b;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+.primary-btn:hover {
+    background: #087b82;
+    transform: translateY(-1px);
+}
+
+
+.secondary-btn {
+    border: none;
+    background: #17232d;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.services {
+    text-align: center;
+}
+
+
+.services h2,
+.presentation h2,
+.request-section h2,
+.contact h2 {
+    color: #0b939b;
+    font-size: 30px;
+}
+
+
+.section-intro {
+    margin: 12px 0 30px;
+    color: #66727c;
+}
+
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+    border-left: 7px solid #0b939b;
+}
+
+
+.service-card h3 {
+    color: #0b939b;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+
+.service-card p {
+    color: #68737c;
+    margin-bottom: 20px;
+}
+
+
+.service-btn {
+    border: none;
+    background: #f39a21;
+    color: white;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PARCOURS
+   ========================================================= */
+
+.request-section {
+    background: white;
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow: 0 7px 28px rgba(0, 0, 0, 0.07);
+}
+
+
+.step-box {
+    margin-top: 25px;
+    padding: 25px;
+    background: #f7fafb;
+    border-radius: 18px;
+    border: 1px solid #e1e7e9;
+}
+
+
+.step-box h3 {
+    color: #17232d;
+    margin-bottom: 15px;
+}
+
+
+.small-text {
+    color: #66727c;
+    margin-bottom: 15px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   SÉLECTION
+   ========================================================= */
+
+.selection-box {
+    background: white;
+    border: 1px solid #d7dde0;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+
+.selection-box.empty {
+    color: #8a949b;
+}
+
+
+.needs-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+.need-btn {
+    border: 1px solid #0b939b;
+    background: white;
+    color: #17232d;
+    padding: 13px;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.need-btn:hover {
+    background: #eef9fa;
+}
+
+
+.need-btn.selected {
+    background: #0b939b;
+    color: white;
+}
+
+
+.selected-list {
+    margin-top: 20px;
+}
+
+
+.selected-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid #d7dde0;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+}
+
+
+.selected-item span {
+    font-weight: 600;
+}
+
+
+.selection-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+.edit-btn {
+    background: #17232d;
+    color: white;
+}
+
+
+.delete-btn {
+    background: #d9534f;
+    color: white;
+}
+
+
+/* =========================================================
+   CHOIX DE DEMANDE
+   ========================================================= */
+
+.choice-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.choice-btn {
+    flex: 1;
+    min-width: 220px;
+    border: 2px solid #0b939b;
+    background: white;
+    color: #0b939b;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.choice-btn:hover,
+.choice-btn.active {
+    background: #0b939b;
+    color: white;
+}
+
+
+/* =========================================================
+   FORMULAIRE
+   ========================================================= */
+
+label {
+    display: block;
+    font-weight: 700;
+    margin: 15px 0 8px;
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #d7dde0;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    background: white;
+    outline: none;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0b939b;
+    box-shadow: 0 0 0 2px rgba(11, 147, 155, 0.12);
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =========================================================
+   CALENDRIER
+   ========================================================= */
+
+.appointment-field {
+    margin-top: 20px;
+}
+
+
+.selection-control {
+    width: 100%;
+    border: 1px solid #d7dde0;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.calendar-container {
+    background: white;
+    border: 1px solid #d7dde0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.calendar-header button {
+    border: none;
+    background: #0b939b;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+
+.weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+
+.weekdays span {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #66727c;
+}
+
+
+.calendar-days {
+    margin-top: 10px;
+}
+
+
+.calendar-day {
+    border: 1px solid #e0e5e7;
+    background: white;
+    border-radius: 8px;
+    padding: 10px 5px;
+    cursor: pointer;
+}
+
+
+.calendar-day:hover {
+    background: #eef9fa;
+}
+
+
+.calendar-day.selected {
+    background: #0b939b;
+    color: white;
+    border-color: #0b939b;
+}
+
+
+.calendar-day.disabled {
+    color: #c0c6ca;
+    background: #f3f5f6;
+    cursor: not-allowed;
+}
+
+
+.calendar-confirm {
+    width: 100%;
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   RDV
+   ========================================================= */
+
+.appointment-summary {
+    margin-top: 20px;
+    background: #eef9fa;
+    border-left: 5px solid #0b939b;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+
+.appointment-summary p {
+    margin: 8px 0 15px;
+}
+
+
+.appointment-summary button {
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   FICHE CLIENT
+   ========================================================= */
+
+.client-summary {
+    margin-top: 25px;
+    background: #17232d;
+    color: white;
+    border-radius: 15px;
+    padding: 22px;
+}
+
+
+.client-summary h4 {
+    color: #f39a21;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+
+.client-summary p {
+    margin-bottom: 8px;
+}
+
+
+#summaryNeeds {
+    margin: 10px 0;
+}
+
+
+.summary-need {
+    background: rgba(255,255,255,0.1);
+    padding: 7px 10px;
+    border-radius: 7px;
+    margin-top: 6px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    text-align: center;
+}
+
+
+.contact p {
+    color: #66727c;
+    margin: 12px 0 25px;
+}
+
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    background: #0b939b;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 11px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.whatsapp-btn {
+    background: #25d366;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.60);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+
+.modal.active {
+    display: flex;
+}
+
+
+.modal-content {
+    position: relative;
+    width: min(600px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+}
+
+
+.modal-content h2 {
+    color: #0b939b;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+.modal-content p {
+    color: #65717b;
+    margin-bottom: 20px;
+}
+
+
+.modal-content h3 {
+    margin-bottom: 12px;
+}
+
+
+.modal-content ul {
+    margin: 0 0 25px 20px;
+}
+
+
+.modal-content li {
+    margin-bottom: 10px;
+}
+
+
+.close-modal {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    border: none;
+    background: transparent;
+    font-size: 35px;
+    cursor: pointer;
+    color: #17232d;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: #17232d;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 30px;
+}
+
+
+footer strong {
+    display: block;
+    color: #f39a21;
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .needs-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+
+    .request-section {
+        padding: 30px 20px;
+    }
+
+    .choice-buttons {
+        flex-direction: column;
+    }
+
+    .choice-btn {
+        width: 100%;
+    }
+
+    .selected-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .selection-actions {
+        width: 100%;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        flex: 1;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-btn {
+        width: 100%;
+    }
+
+}
