@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pôle MS — Pôle Multi Service</title>
+
+    <link rel="stylesheet" href="Css.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">PÔLE MS</div>
+
+    <p class="slogan">Pôle Multi Service</p>
+
+    <p class="baseline">Votre besoin, notre solution.</p>
+
+</header>
+
+
+<main>
+
+    <!-- =====================================================
+         ACCUEIL
+         ===================================================== -->
+
+    <section class="hero">
+
+        <h1>À votre service en Guadeloupe</h1>
+
+        <p>
+            Pôle MS vous accompagne dans vos projets et vous
+            oriente vers la solution adaptée à votre besoin.
+        </p>
+
+        <button id="quoteBtn" class="primary-btn">
+            📋 Demander un devis
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRÉSENTATION
+         ===================================================== -->
+
+    <section class="presentation">
+
+        <h2>Présentation de Pôle MS</h2>
+
+        <p>
+            Pôle MS est un point d'entrée unique pour faciliter
+            vos demandes de services. Vous identifiez votre
+            besoin, sélectionnez les prestations souhaitées,
+            puis choisissez entre une demande de devis ou
+            une prise de rendez-vous.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         LES 5 PÔLES
+         ===================================================== -->
+
+    <section class="services">
+
+        <h2>Nos 5 pôles</h2>
+
+        <p class="section-intro">
+            Sélectionnez le pôle correspondant à votre besoin.
+        </p>
+
+        <div class="services-grid">
+
+
+            <!-- RÉNOVATION -->
+
+            <article class="service-card">
+
+                <h3>Rénovation</h3>
+
+                <p>
+                    Travaux de rénovation, amélioration,
+                    transformation et remise en état.
+                </p>
+
+                <button
+                    class="service-btn"
+                    data-service="renovation">
+                    Découvrir
+                </button>
+
+            </article>
+
+
+            <!-- PAYSAGISTE -->
+
+            <article class="service-card">
+
+                <h3>Paysagiste</h3>
+
+                <p>
+                    Création, entretien et aménagement
+                    de vos espaces extérieurs.
+                </p>
+
+                <button
+                    class="service-btn"
+                    data-service="paysagiste">
+                    Découvrir
+                </button>
+
+            </article>
+
+
+            <!-- VRD -->
+
+            <article class="service-card">
+
+                <h3>VRD</h3>
+
+                <p>
+                    Voirie, réseaux divers, terrassement
+                    et aménagements extérieurs.
+                </p>
+
+                <button
+                    class="service-btn"
+                    data-service="vrd">
+                    Découvrir
+                </button>
+
+            </article>
+
+
+            <!-- MENUISERIE -->
+
+            <article class="service-card">
+
+                <h3>Menuiserie</h3>
+
+                <p>
+                    Pose, remplacement et aménagement
+                    de menuiseries.
+                </p>
+
+                <button
+                    class="service-btn"
+                    data-service="menuiserie">
+                    Découvrir
+                </button>
+
+            </article>
+
+
+            <!-- SERVICE À LA PERSONNE -->
+
+            <article class="service-card">
+
+                <h3>Service à la personne</h3>
+
+                <p>
+                    Accompagnement et services du quotidien
+                    adaptés à vos besoins.
+                </p>
+
+                <button
+                    class="service-btn"
+                    data-service="sap">
+                    Découvrir
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PARCOURS CLIENT
+         ===================================================== -->
+
+    <section
+        id="requestSection"
+        class="request-section">
+
+        <h2>Votre demande</h2>
+
+        <p class="section-intro">
+            Identifiez votre besoin et choisissez ensuite
+            une demande de devis ou un rendez-vous.
+        </p>
+
+
+        <!-- PÔLE -->
+
+        <div class="step-box">
+
+            <h3>1. Pôle sélectionné</h3>
+
+            <div
+                id="selectedPole"
+                class="selection-box empty">
+                Aucun pôle sélectionné
+            </div>
+
+        </div>
+
+
+        <!-- BESOINS -->
+
+        <div class="step-box">
+
+            <h3>2. Identifiez vos besoins</h3>
+
+            <p class="small-text">
+                Vous pouvez sélectionner plusieurs besoins.
+            </p>
+
+            <div
+                id="needsContainer"
+                class="needs-container">
+            </div>
+
+            <div
+                id="selectedNeeds"
+                class="selected-list">
+            </div>
+
+        </div>
+
+
+        <!-- TYPE DE DEMANDE -->
+
+        <div class="step-box">
+
+            <h3>3. Choisissez votre demande</h3>
+
+            <div class="choice-buttons">
+
+                <button
+                    id="chooseQuoteBtn"
+                    class="choice-btn">
+                    📋 Demande de devis
+                </button>
+
+                <button
+                    id="chooseAppointmentBtn"
+                    class="choice-btn">
+                    📅 Prendre rendez-vous
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CALENDRIER
+             ================================================= -->
+
+        <div
+            id="appointmentBox"
+            class="step-box hidden">
+
+            <h3>4. Choisissez votre rendez-vous</h3>
+
+
+            <!-- DATE -->
+
+            <div class="appointment-field">
+
+                <label for="appointmentDate">
+                    Date du rendez-vous
+                </label>
+
+                <button
+                    id="openCalendarBtn"
+                    type="button"
+                    class="selection-control">
+
+                    📅
+                    <span id="dateDisplay">
+                        Choisir une date
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- CALENDRIER -->
+
+            <div
+                id="calendarContainer"
+                class="calendar-container hidden">
+
+                <div class="calendar-header">
+
+                    <button
+                        type="button"
+                        id="previousMonth">
+                        ‹
+                    </button>
+
+                    <strong id="calendarMonth">
+                        Mois
+                    </strong>
+
+                    <button
+                        type="button"
+                        id="nextMonth">
+                        ›
+                    </button>
+
+                </div>
+
+
+                <div class="weekdays">
+
+                    <span>Lun</span>
+                    <span>Mar</span>
+                    <span>Mer</span>
+                    <span>Jeu</span>
+                    <span>Ven</span>
+                    <span>Sam</span>
+                    <span>Dim</span>
+
+                </div>
+
+
+                <div
+                    id="calendarDays"
+                    class="calendar-days">
+                </div>
+
+
+                <button
+                    id="confirmDateBtn"
+                    type="button"
+                    class="primary-btn calendar-confirm hidden">
+
+                    Confirmer la date
+
+                </button>
+
+            </div>
+
+
+            <!-- HEURE -->
+
+            <div class="appointment-field">
+
+                <label for="appointmentTime">
+                    Horaire du rendez-vous
+                </label>
+
+                <select
+                    id="appointmentTime">
+
+                    <option value="">
+                        Choisir un horaire
+                    </option>
+
+                    <option value="08:00">08:00</option>
+                    <option value="08:30">08:30</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- RÉCAP RDV -->
+
+            <div
+                id="appointmentSummary"
+                class="appointment-summary hidden">
+
+                <strong>Rendez-vous sélectionné</strong>
+
+                <p id="appointmentSummaryText">
+                </p>
+
+                <button
+                    id="editAppointmentBtn"
+                    type="button"
+                    class="edit-btn">
+
+                    Modifier
+
+                </button>
+
+                <button
+                    id="deleteAppointmentBtn"
+                    type="button"
+                    class="delete-btn">
+
+                    Supprimer
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FICHE CLIENT
+             ================================================= -->
+
+        <div
+            id="clientBox"
+            class="step-box">
+
+            <h3>Fiche client</h3>
+
+
+            <label for="clientName">
+                Nom / prénom
+            </label>
+
+            <input
+                type="text"
+                id="clientName"
+                placeholder="Votre nom et prénom"
+                required>
+
+
+            <label for="clientPhone">
+                Téléphone
+            </label>
+
+            <input
+                type="tel"
+                id="clientPhone"
+                placeholder="0690 08 34 07"
+                required>
+
+
+            <label for="clientEmail">
+                E-mail
+            </label>
+
+            <input
+                type="email"
+                id="clientEmail"
+                placeholder="Votre adresse e-mail">
+
+
+            <label for="clientAddress">
+                Adresse d'intervention
+            </label>
+
+            <input
+                type="text"
+                id="clientAddress"
+                placeholder="Adresse ou lieu d'intervention">
+
+
+            <label for="clientDescription">
+                Informations complémentaires
+            </label>
+
+            <textarea
+                id="clientDescription"
+                rows="5"
+                placeholder="Décrivez votre besoin...">
+            </textarea>
+
+
+            <label for="clientPhoto">
+                Ajouter une photo
+            </label>
+
+            <input
+                type="file"
+                id="clientPhoto"
+                accept="image/*">
+
+
+            <!-- RÉCAPITULATIF -->
+
+            <div class="client-summary">
+
+                <h4>Récapitulatif de votre demande</h4>
+
+                <p>
+                    <strong>Pôle :</strong>
+                    <span id="summaryPole">
+                        —
+                    </span>
+                </p>
+
+                <div>
+
+                    <strong>Besoins :</strong>
+
+                    <div id="summaryNeeds">
+                        Aucun besoin sélectionné
+                    </div>
+
+                </div>
+
+                <p>
+                    <strong>Demande :</strong>
+                    <span id="summaryType">
+                        —
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Date :</strong>
+                    <span id="summaryDate">
+                        —
+                    </span>
+                </p>
+
+                <p>
+                    <strong>Horaire :</strong>
+                    <span id="summaryTime">
+                        —
+                    </span>
+                </p>
+
+            </div>
+
+
+            <button
+                id="submitRequestBtn"
+                type="button"
+                class="primary-btn">
+
+                Envoyer ma demande
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section class="contact">
+
+        <h2>Besoin d'un service ?</h2>
+
+        <p>
+            Contactez Pôle MS directement.
+        </p>
+
+        <div class="contact-buttons">
+
+            <a
+                class="contact-btn"
+                href="tel:+590690083407">
+
+                📞 Appeler
+
+            </a>
+
+
+            <a
+                class="contact-btn whatsapp-btn"
+                href="https://wa.me/590690083407"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                💬 WhatsApp
+
+            </a>
+
+        </div>
+
+        <p class="contact-phone">
+            📞 06 90 08 34 07
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FICHE SERVICE
+     ========================================================= -->
+
+<div
+    id="serviceModal"
+    class="modal"
+    aria-hidden="true">
+
+    <div class="modal-content">
+
+        <button
+            id="closeModalBtn"
+            class="close-modal"
+            type="button">
+
+            ×
+
+        </button>
+
+        <h2 id="modalTitle">
+            Service
+        </h2>
+
+        <p id="modalDescription">
+        </p>
+
+        <h3>Nos prestations</h3>
+
+        <ul id="modalList">
+        </ul>
+
+        <button
+            id="modalSelectBtn"
+            class="primary-btn"
+            type="button">
+
+            Sélectionner ce pôle
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <p>
+        © 2026 Pôle MS — Pôle Multi Service
+    </p>
+
+    <strong>
+        À votre service en Guadeloupe.
+    </strong>
+
+</footer>
+
+
+<script src="Js.js"></script>
+
+</body>
+</html>
