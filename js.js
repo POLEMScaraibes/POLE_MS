@@ -2476,80 +2476,150 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
 
-                    /* -------------------------------------
-                       SUCCÈS
-                       ------------------------------------- */
+                    /* -----------------------------------------
+   SUCCÈS
+   ----------------------------------------- */
 
-                    if (
-                        response.ok &&
-                        result.success
-                    ) {
+if (
+    response.ok &&
+    result.success
+) {
 
-                        console.log(
-                            "DEMANDE PÔLE MS ENVOYÉE",
-                            requestData
-                        );
+    console.log(
+        "DEMANDE PÔLE MS ENVOYÉE",
+        requestData
+    );
 
-
-                        alert(
-                            "Merci " +
-                            requestData.client.name +
-                            " !\n\n" +
-                            "Votre demande a bien été envoyée à Pôle MS.\n\n" +
-                            "Nous vous recontacterons au 0690 08 34 07."
-                        );
-
-
-                    } else {
-
-                        console.error(
-                            "ERREUR WEB3FORMS",
-                            result
-                        );
+    alert(
+        "Merci " +
+        requestData.client.name +
+        " !\n\n" +
+        "Votre demande a bien été envoyée à Pôle MS.\n\n" +
+        "Nous vous recontacterons au 0690 08 34 07."
+    );
 
 
-                        alert(
-                            "La demande n'a pas pu être envoyée.\n\n" +
-                            "Veuillez vérifier votre connexion internet " +
-                            "et réessayer."
-                        );
+    /* =================================================
+       RÉINITIALISATION APRÈS ENVOI
+       ================================================= */
 
-                    }
+    state.pole = null;
 
-                } catch (error) {
+    state.needs = [];
 
-                    console.error(
-                        "ERREUR RÉSEAU WEB3FORMS",
-                        error
-                    );
+    state.requestType = null;
 
-
-                    alert(
-                        "Une erreur est survenue pendant l'envoi.\n\n" +
-                        "Veuillez vérifier votre connexion internet " +
-                        "et réessayer."
-                    );
-
-                } finally {
-
-                    /* -------------------------------------
-                       RÉACTIVATION DU BOUTON
-                       ------------------------------------- */
-
-                    submitRequestBtn.disabled =
-                        false;
+    state.appointment = {
+        date: null,
+        dateLabel: null,
+        time: null
+    };
 
 
-                    submitRequestBtn.textContent =
-                        originalButtonText;
+    /* PÔLE */
 
-                }
+    if (selectedPole) {
 
-            }
+        selectedPole.textContent =
+            "Aucun pôle sélectionné";
+
+        selectedPole.classList.add(
+            "empty"
         );
 
     }
 
+
+    /* BESOINS */
+
+    renderNeeds();
+
+    renderSelectedNeeds();
+
+
+    /* TYPE DE DEMANDE */
+
+    if (chooseQuoteBtn) {
+
+        chooseQuoteBtn.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    if (chooseAppointmentBtn) {
+
+        chooseAppointmentBtn.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    /* RENDEZ-VOUS */
+
+    resetAppointment();
+
+
+    if (appointmentBox) {
+
+        appointmentBox.classList.add(
+            "hidden"
+        );
+
+    }
+
+
+    /* FICHE CLIENT */
+
+    if (clientName) {
+
+        clientName.value = "";
+
+    }
+
+
+    if (clientPhone) {
+
+        clientPhone.value = "";
+
+    }
+
+
+    if (clientEmail) {
+
+        clientEmail.value = "";
+
+    }
+
+
+    if (clientAddress) {
+
+        clientAddress.value = "";
+
+    }
+
+
+    if (clientDescription) {
+
+        clientDescription.value = "";
+
+    }
+
+
+    /* RÉCAPITULATIF */
+
+    updateSummary();
+
+
+    console.log(
+        "Pôle MS — parcours réinitialisé après envoi."
+    );
+
+}
+
+                } 
 
     /* =====================================================
        INITIALISATION
